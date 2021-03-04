@@ -15,7 +15,7 @@
           <td>{{ person.id }}</td>
           <td>{{ person.firstName }}</td>
           <td>{{ person.contador }}</td>
-          <td><a [routerLink]="['/viewperson',{{person.firstName}}]" >Detalle</a></td>
+          <td><a [routerLink]="['/viewperson',person.firstName]" >Detalle</a></td>
         </tr>
       </tbody>
     </table>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 import { Planet } from '../model/planet';
 import { PlanetServiceService } from '../services/planet-service.service';
 
@@ -10,7 +11,7 @@ import { PlanetServiceService } from '../services/planet-service.service';
 })
 export class PlanetFormComponent implements OnInit {
 
-  planet: Planet;
+  planet: Planet|undefined;
   constructor(
   private route: ActivatedRoute,
   private router: Router,
@@ -19,9 +20,14 @@ export class PlanetFormComponent implements OnInit {
   ngOnInit(): void {
 
   this.route.params
-    .switchMap((params: Params) => this.planetsService.findAll().filter(p -> p.firstName = params['name']))
-    .subscribe((planet) => this.planet = planet);
-  this.planetsService.save(this.planet.contador++);
+    .pipe(
+      switchMap((params: Params) => this.planetsService.findAll().pipe(
+        map( list => list.filter(p => p.firstName == params['name'])[0] )
+      ))
+    )
+    .subscribe((planet:any) => this.planet = planet);
+  this.planet!.contador!++;
+  this.planetsService.save(this.planet!);
   }
 
 }
