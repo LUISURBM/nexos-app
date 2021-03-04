@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonFormComponent } from './person-form/person-form.component';
-import { PlanetListComponent } from './planet-list/planet-list.component';
-import { PlanetFormComponent } from './planet-form/planet-form.component';
+import { EditorialListComponent } from './editorial-list/editorial-list.component';
+import { EditorialFormComponent } from './editorial-form/editorial-form.component';
 
 const routes: Routes = [
-  { path: 'persons', component: PersonListComponent },
+  { path: 'autores', component: PersonListComponent },
   { path: 'viewperson/:name', component: PersonFormComponent },
-  { path: 'planets', component: PlanetListComponent },
-  { path: 'viewplanet/:name', component: PlanetFormComponent }
+  { path: 'editorials', component: EditorialListComponent },
+  { path: 'vieweditorial/:name', component: EditorialFormComponent }
 ];
 
 @NgModule({

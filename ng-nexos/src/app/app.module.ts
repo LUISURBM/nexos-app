@@ -3,22 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonListComponent } from './person-list/person-list.component';
-import { PlanetListComponent } from './planet-list/planet-list.component';
-import { PersonFormComponent } from './person-form/person-form.component';
-import { PlanetFormComponent } from './planet-form/planet-form.component';
-import { PlanetServiceService } from './services/planet-service.service';
-import { PersonServiceService } from './services/person-service.service';
+import { AutorListComponent } from './Autor-list/Autor-list.component';
+import { LibroListComponent } from './Libro-list/Libro-list.component';
+import { AutorFormComponent } from './Autor-form/Autor-form.component';
+import { LibroFormComponent } from './Libro-form/Libro-form.component';
+import { LibroServiceService } from './services/Libro-service.service';
+import { AutorServiceService } from './services/Autor-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonListComponent,
-    PlanetListComponent,
-    PersonFormComponent,
-    PlanetFormComponent
+    AutorListComponent,
+    LibroListComponent,
+    AutorFormComponent,
+    LibroFormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PersonServiceService,PlanetServiceService],
+  providers: [AutorServiceService,LibroServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

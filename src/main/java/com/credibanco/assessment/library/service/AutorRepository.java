@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.planet;
+package com.credibanco.assessment.library.service;
 
 import java.util.Collection;
+
+import com.credibanco.assessment.library.model.Autor;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
@@ -31,31 +33,31 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author Luis Urbina
  */
-public interface PlanetRepository extends Repository<Planet, Integer> {
+public interface AutorRepository extends Repository<Autor, Integer> {
 
     /**
-     * Retrieve all <code>Planet</code>s from the data store.
+     * Retrieve all <code>autor</code>s from the data store.
      *
-     * @return a <code>Collection</code> of <code>Planet</code>s
+     * @return a <code>Collection</code> of <code>Autor</code>s
      */
     @Transactional(readOnly = true)
-    @Cacheable("planets")
-    Collection<Planet> findAll() throws DataAccessException;
+    @Cacheable("autores")
+    Collection<Autor> findAll() throws DataAccessException;
 
     /**
      * Retrieve an {@link Owner} from the data store by id.
      * @param id the id to search for
      * @return the {@link Owner} if found
      */
-    @Query("SELECT planet FROM Planet planet WHERE planet.firstName =:firstName")
+    @Query("SELECT autor FROM Autor autor WHERE autor.firstName =:firstName")
     @Transactional(readOnly = true)
-    Planet findByFirstName(@Param("firstName") String firstName);
+    Autor findByFirstName(@Param("firstName") String firstName);
 
     /**
-     * Save an {@link Planet} to the data store, either inserting or updating it.
-     * @param planet the {@link Planet} to save
+     * Save an {@link autor} to the data store, either inserting or updating it.
+     * @param autor the {@link autor} to save
      */
-    void save(Planet planet);
+    void save(Autor autor);
 
 
 }

@@ -13,24 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.planet;
+package com.credibanco.assessment.library.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 /**
- * Simple JavaBean domain object representing an planet.
+ * Simple JavaBean domain object representing an autor.
  *
  * @author Luis Urbina
  */
 @Entity
-@Table(name = "planets")
-public class Planet {
+@Table(name = "autores")
+public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,16 +38,16 @@ public class Planet {
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "dfekm")
+    @Column(name = "dob")
     @NotEmpty
-    private String dfekm;
+    private String dob;
 
-    @Column(name = "ntkap")
+    @Column(name = "ciudad")
     @NotEmpty
-    private String ntkap;
+    private String ciudad;
 
-    @Column(name = "contador")
-    private Integer contador;
+    @Column(name = "correo")
+    private String correo;
 
     public String getFirstName() {
         return this.firstName;
@@ -58,27 +57,28 @@ public class Planet {
         this.firstName = firstName;
     }
 
-    public String getDfekm() {
-        return this.dfekm;
+    public String getDob() {
+        return this.dob;
     }
 
-    public void setDfekm(String dfekm) {
-        this.dfekm = dfekm;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-        public String getNtkap() {
-        return this.ntkap;
+    public String getCiudad(){
+        return this.ciudad;
     }
 
-    public void setNtkap(String ntkap) {
-        this.ntkap = ntkap;
+    public void setCiudad(String ciudad){
+        this.ciudad = ciudad;
     }
 
-    public Integer getContador(){
-        return this.contador;
+    public String getCorreo(){
+        return this.correo;
     }
 
-    public void setContador(Integer contador){
-        this.contador = contador;
+    public void setCorreo(String correo){
+        this.correo = correo;
     }
+
 }

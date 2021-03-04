@@ -18,8 +18,10 @@ package org.springframework.samples.nexos.service;
 
 import java.util.Collection;
 
+import com.springframework.samples.nexos.model.BaseEntity;
+
 import org.springframework.orm.ObjectRetrievalFailureException;
-import org.springframework.samples.nexos.model.BaseEntity;
+import org.springframework.orm.ObjectRetrievalFailureException;
 
 /**
  * Utility methods for handling entities. Separate from the BaseEntity class mainly because of dependency on the

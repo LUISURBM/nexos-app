@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.person;
+package com.credibanco.assessment.nexos.service;
 
 import java.util.List;
 
@@ -28,22 +28,23 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @Controller
 @CrossOrigin(origins = "*")
-class PersonController {
+class PlanetController {
 
-    private final PersonRepository persons;
+    private final PlanetRepository planets;
 
-    public PersonController(PersonRepository personService) {
-        this.persons = personService;
+
+    public PlanetController(PlanetRepository planetService) {
+        this.planets = planetService;
     }
 
-    @GetMapping("/persons")
-    public List<Person> getPersons() {
-        return (List<Person>) persons.findAll();
+    @GetMapping("/planets")
+    public List<Editorial> getPlanets() {
+        return (List<Editorial>) planets.findAll();
     }
 
-    @PostMapping("/persons")
-    void addPerson(@RequestBody Person person) {
-        persons.save(person);
+    @PostMapping("/planets")
+    void addPlanet(@RequestBody Editorial planet) {
+        planets.save(planet);
     }
 
 }

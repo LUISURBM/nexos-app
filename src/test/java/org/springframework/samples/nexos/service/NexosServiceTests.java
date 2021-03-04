@@ -21,15 +21,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;
 import java.util.Collection;
 
+import com.springframework.samples.nexos.person.Person;
+import com.springframework.samples.nexos.person.PersonRepository;
+import com.springframework.samples.nexos.planet.Planet;
+import com.springframework.samples.nexos.planet.PlanetRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.ComponentScan;aTest;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.samples.nexos.planet.Planet;
-import org.springframework.samples.nexos.planet.PlanetRepository;
-import org.springframework.samples.nexos.person.Person;
-import org.springframework.samples.nexos.person.PersonRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
