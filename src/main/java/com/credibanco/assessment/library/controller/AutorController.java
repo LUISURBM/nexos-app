@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.planet;
+package com.credibanco.assessment.library.controller;
 
 import java.util.List;
 
@@ -28,23 +28,22 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @Controller
 @CrossOrigin(origins = "*")
-class PlanetController {
+class LibroController {
 
-    private final PlanetRepository planets;
+    private final LibroRepository libros;
 
-
-    public PlanetController(PlanetRepository planetService) {
-        this.planets = planetService;
-    }
-    
-    @GetMapping("/planets")
-    public List<Planet> getPlanets() {
-        return (List<Planet>) planets.findAll();
+    public libroController(LibroRepository libroService) {
+        this.libros = libroService;
     }
 
-    @PostMapping("/planets")
-    void addPlanet(@RequestBody Planet planet) {
-        planets.save(planet);
+    @GetMapping("/libros")
+    public List<Libro> getlibros() {
+        return (List<Libro>) libros.findAll();
+    }
+
+    @PostMapping("/libros")
+    void addLibro(@RequestBody Libro libro) {
+        libros.save(libro);
     }
 
 }

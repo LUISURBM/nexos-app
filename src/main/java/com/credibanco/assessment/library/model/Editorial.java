@@ -13,23 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.person;
+package com.credibanco.assessment.library.model;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 /**
- * Simple JavaBean domain object representing a veterinarian.
+ * Simple JavaBean domain object representing an editorial.
  *
  * @author Luis Urbina
  */
 @Entity
-@Table(name = "persons")
-public class Person {
+@Table(name = "editoriales")
+public class Editorial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,9 +41,21 @@ public class Person {
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "planet")
+    @Column(name = "dob")
     @NotEmpty
-    private String planet;
+    private Date dob;
+
+    @Column(name = "direccion")
+    @NotEmpty
+    private String direccion;
+
+    @Column(name = "ciudad")
+    @NotEmpty
+    private String ciudad;
+
+    @Column(name = "correo")
+    @NotEmpty
+    private String correo;
 
     @Column(name = "contador")
     private Integer contador;
@@ -53,12 +68,36 @@ public class Person {
         this.firstName = firstName;
     }
 
-    public String getPlanet() {
-        return this.planet;
+    public Date getDob() {
+        return this.dob;
     }
 
-    public void setPlanet(String planet) {
-        this.planet = planet;
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getDireccion() {
+        return this.direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCiudad() {
+        return this.ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getCorreo() {
+        return this.correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public Integer getContador(){
@@ -68,5 +107,4 @@ public class Person {
     public void setContador(Integer contador){
         this.contador = contador;
     }
-
 }

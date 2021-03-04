@@ -31,6 +31,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import com.springframework.samples.nexos.system.CrashController;
+
+import com.springframework.samples.nexos.system.CrashController;
+
 /**
  * Test class for {@link CrashController}
  *

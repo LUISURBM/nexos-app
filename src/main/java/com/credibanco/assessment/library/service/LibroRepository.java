@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.nexos.person;
+package com.credibanco.assessment.library.controller;
 
 import java.util.Collection;
+
+import com.credibanco.assessment.library.model.Libro;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
@@ -25,41 +27,41 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Repository class for <code>Person</code> domain objects All method names are compliant with Spring Data naming
+ * Repository class for <code>libro</code> domain objects All method names are compliant with Spring Data naming
  * conventions so this interface can easily be extended for Spring Data.
  * See: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
  *
  * @author Luis Urbina
  */
-public interface PersonRepository extends Repository<Person, Integer> {
+public interface LibroRepository extends Repository<Libro, Integer> {
 
     /**
-     * Retrieve all <code>Person</code>s from the data store.
+     * Retrieve all <code>libro</code>s from the data store.
      *
-     * @return a <code>Collection</code> of <code>Person</code>s
+     * @return a <code>Collection</code> of <code>libro</code>s
      */
     @Transactional(readOnly = true)
-    @Cacheable("persons")
-    Collection<Person> findAll() throws DataAccessException;
+    @Cacheable("libros")
+    Collection<Libro> findAll() throws DataAccessException;
 
 
     /**
-     * Retrieve {@link Planet}s from the data store by first name, returning all planets
+     * Retrieve {@link Editorial}s from the data store by first name, returning all planets
      * whose planet <i>starts</i> with the given Planet name.
      * @param planet Value to search for
      * @return a Collection of matching {@link planet}s (or an empty Collection if none
      * found)
      */
-    @Query("SELECT DISTINCT person FROM Person person WHERE person.planet LIKE :planet%")
+    @Query("SELECT DISTINCT libro FROM Libro libro WHERE libro.editorial LIKE :editorial%")
     @Transactional(readOnly = true)
-    Collection<Person> findByPlanet(@Param("planet") String planet);
+    Collection<Libro> findByEditorial(@Param("editorial") int editorial);
 
 
     /**
-     * Save an {@link Person} to the data store, either inserting or updating it.
-     * @param person the {@link person} to save
+     * Save an {@link libro} to the data store, either inserting or updating it.
+     * @param Libro the {@link libro} to save
      */
-    void save(Person person);
+    void save(Libro libro);
 
 
 }

@@ -22,10 +22,12 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
+import com.springframework.samples.nexos.person.Person;
+
 import org.junit.Test;
 
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.samples.nexos.person.Person;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import static org.assertj.core.api.Assertions.assertThat;
