@@ -3,7 +3,7 @@ mysql:
   ports:
     - "3306:3306"
   environment:
-    - MYSQL_ROOT_PASSWORD=nexosapp
-    - MYSQL_DATABASE=nexosapp
+    - MYSQL_ROOT_PASSWORD=springapp
+    - MYSQL_DATABASE=springapp
   volumes:
     - "./conf.d:/etc/mysql/conf.d:ro"

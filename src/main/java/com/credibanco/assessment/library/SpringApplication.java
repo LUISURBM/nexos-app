@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.credibanco.assessment.nexos;
+package com.credibanco.assessment.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * nexos Spring Boot Application.
+ * spring Spring Boot Application.
  *
  * @author Dave Syer
  *
  */
 @SpringBootApplication
-public class NexosApplication {
+public class SpringApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NexosApplication.class, args);
+        SpringApplication.run(SpringApplication.class, args);
     }
 
 }

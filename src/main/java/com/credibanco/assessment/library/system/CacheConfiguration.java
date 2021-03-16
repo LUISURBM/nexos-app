@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.samples.nexos.system;
+package org.springframework.samples.spring.system;
 
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.cache.annotation.EnableCaching;
@@ -32,7 +32,7 @@ import javax.cache.configuration.MutableConfiguration;
 class CacheConfiguration {
 
     @Bean
-    public JCacheManagerCustomizer nexosCacheConfigurationCustomizer() {
+    public JCacheManagerCustomizer springCacheConfigurationCustomizer() {
         return cm -> {
             cm.createCache("vets", cacheConfiguration());
         };

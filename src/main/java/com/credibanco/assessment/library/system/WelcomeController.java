@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.samples.nexos.system;
+package org.springframework.samples.spring.system;
 
 
 import org.springframework.stereotype.Controller;
